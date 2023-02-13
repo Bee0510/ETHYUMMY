@@ -8,6 +8,7 @@ import 'package:ethyummy/Screens/Home_Screen.dart';
 import 'package:ethyummy/Screens/coin_detailed_screen.dart';
 import 'package:ethyummy/Athentication%20Pages/registration_page.dart';
 import 'package:ethyummy/Athentication%20Pages/signIN_page.dart';
+import 'package:ethyummy/Screens/profile_page.dart';
 import 'package:ethyummy/Screens/splash_screen.dart';
 import 'package:ethyummy/Small%20Compnents/swipe_card.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -56,12 +57,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.pink,
+          primarySwatch: Colors.blue,
         ),
-        home: Wrapper(),
+        home: SplashScreen(),
         routes: {
           'MyCoinDetailedScreen': (context) => MyCoinDetailedScreen(),
           'Myhomescreen': (context) => Myhomescreen(),
+          'Profile_Page': (context) => Profile_Page(),
+          'Wrapper': (context) => Wrapper(),
         },
       ),
     );
