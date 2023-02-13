@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "513221453378",
+    "project_id": "ethyummy-616f9",
+    "storage_bucket": "ethyummy-616f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513221453378:android:5a8e57d2f47b2c15e3afdb",
+        "android_client_info": {
+          "package_name": "com.example.ethyummy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513221453378-tdripqqje46sg8392m2e2lq6ioah9c1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXvii8yi7IifULLbWCw7dH5CjqrkjYrhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513221453378-tdripqqje46sg8392m2e2lq6ioah9c1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

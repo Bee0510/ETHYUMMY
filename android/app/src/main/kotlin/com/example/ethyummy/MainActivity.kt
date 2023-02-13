@@ -1,0 +1,6 @@
+package com.example.ethyummy
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
