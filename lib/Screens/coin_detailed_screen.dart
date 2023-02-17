@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, sized_box_for_whitespace, unnecessary_brace_in_string_interps, unused_local_variable
 
-import 'package:ethyummy/Widgets/graph_sheet.dart';
+import 'package:ethyummy/Screens/graph_sheet.dart';
 import 'package:flutter/material.dart';
 
 class MyCoinDetailedScreen extends StatefulWidget {

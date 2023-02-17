@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, unused_local_variable, prefer_const_literals_to_create_immutables, non_constant_identifier_names
 import 'package:ethyummy/Screens/Home_Screen.dart';
-import 'package:ethyummy/Screens/exchange_screen.dart';
+import 'package:ethyummy/ZUnused%20files/exchange_screen.dart';
 import 'package:flutter/material.dart';
-import '../Screens/my_wallet_screen.dart';
+import 'my_wallet_screen.dart';
 
 class BottomNavigator extends StatefulWidget {
   @override
@@ -41,7 +41,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(32, 38, 46, 2),
+      backgroundColor: Color.fromRGBO(32, 38, 46, 50),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(233, 232, 232, 100),
         title: Text(page[pageNumber]['title'].toString()),

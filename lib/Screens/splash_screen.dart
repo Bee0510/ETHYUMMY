@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Route() {
-    Navigator.of(context).pushReplacementNamed('Myhomescreen');
+    Navigator.of(context).pushReplacementNamed('Wrapper');
   }
 
   @override

@@ -1,12 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, use_key_in_widget_constructors, unused_local_variable
 
 import 'package:flutter/material.dart';
 
 class BuyAndSell extends StatelessWidget {
-  const BuyAndSell({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,7 +28,7 @@ class BuyAndSell extends StatelessWidget {
                 padding: EdgeInsets.all(16),
                 backgroundColor: Color(0xff586af8)),
             onPressed: () {
-              return;
+              Navigator.of(context).pushNamed('Buy_Screen');
             },
             icon: Icon(
               Icons.download,

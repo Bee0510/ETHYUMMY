@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../Widgets/botton_navigator_bar.dart';
+import 'botton_navigator_bar.dart';
 
 class MainScreen extends StatelessWidget {
   @override

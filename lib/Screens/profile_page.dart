@@ -1,10 +1,28 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_unnecessary_containers
 
 import 'package:ethyummy/Small%20Compnents/profile_list.dart';
 import 'package:flutter/material.dart';
 
-class Profile_Page extends StatelessWidget {
+import '../Widgets/modal_bottom_sheet.dart';
+
+class Profile_Page extends StatefulWidget {
   const Profile_Page({super.key});
+
+  @override
+  State<Profile_Page> createState() => _Profile_PageState();
+}
+
+class _Profile_PageState extends State<Profile_Page> {
+  void BottomSheet() {
+    showModalBottomSheet(
+        backgroundColor: Color.fromRGBO(10, 4, 60, 0),
+        context: context,
+        builder: (context) {
+          return Container(
+            child: UpdateNameButton(),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +77,7 @@ class Profile_Page extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
-        onPressed: () {},
+        onPressed: () => BottomSheet(),
         child: Icon(
           Icons.edit,
           color: Colors.blue,
