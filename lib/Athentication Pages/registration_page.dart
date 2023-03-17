@@ -73,8 +73,8 @@ class _Registration_pageState extends State<Registration_page> {
                               });
                             },
                           ),
-                          SizedBox(height: 20),
-                          Row(
+                          SizedBox(height: 10),
+                          Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               OutlinedButton.icon(
@@ -87,7 +87,7 @@ class _Registration_pageState extends State<Registration_page> {
                                       setState(() {
                                         loading = false;
                                         if (Email.contains('@gmail.com')) {
-                                          error = 'Enail already exists';
+                                          error = 'Email already exists';
                                         } else
                                           (error = 'Invalid Email');
                                       });
@@ -100,6 +100,8 @@ class _Registration_pageState extends State<Registration_page> {
                                     side: BorderSide(
                                         width: 2, color: Colors.white)),
                               ),
+                              SizedBox(height: 8),
+                              Divider(thickness: 2, color: Colors.grey[850]),
                               ElevatedButton.icon(
                                 onPressed: () {
                                   widget.toggleChange();

@@ -4,6 +4,7 @@
 
 import 'package:ethyummy/Athentication%20Pages/wrapper.dart';
 import 'package:ethyummy/Auth%20Models/auth_class.dart';
+import 'package:ethyummy/Screens/Coming_soon.dart';
 import 'package:ethyummy/Screens/Home_Screen.dart';
 import 'package:ethyummy/Screens/buy_screen.dart';
 import 'package:ethyummy/Screens/coin_detailed_screen.dart';
@@ -68,6 +69,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           'Profile_Page': (context) => Profile_Page(),
           'Wrapper': (context) => Wrapper(),
           'Buy_Screen': (context) => Buy_Screen(),
+          'Coming_Soon': (context) => Coming_Soon(),
         },
       ),
     );

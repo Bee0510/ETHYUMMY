@@ -60,54 +60,57 @@ class _MyhomescreenState extends State<Myhomescreen> {
       body: SafeArea(
         child: SizedBox(
           height: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(5),
-                alignment: Alignment.topRight,
-                child: OutlinedButton.icon(
-                  onPressed: () => _auth.LogOut(),
-                  icon: Icon(Icons.power_settings_new),
-                  label: Text('Log Out'),
-                  style: OutlinedButton.styleFrom(
-                      side: BorderSide(width: 2, color: Colors.white)),
+          child: SingleChildScrollView(
+            physics: ScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(5),
+                  alignment: Alignment.topRight,
+                  child: OutlinedButton.icon(
+                    onPressed: () => _auth.LogOut(),
+                    icon: Icon(Icons.power_settings_new),
+                    label: Text('Log Out'),
+                    style: OutlinedButton.styleFrom(
+                        side: BorderSide(width: 2, color: Colors.white)),
+                  ),
                 ),
-              ),
-              Center(
-                child: Container(
-                  height: 250,
-                  width: 375,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: RadialGradient(
-                        stops: [0.2, 0.4, 0.6],
-                        center: Alignment.center,
-                        radius: 0.5,
-                        focalRadius: 0.5,
-                        colors: [
-                          Color.fromRGBO(10, 4, 60, 100),
-                          Color.fromRGBO(10, 4, 60, 100).withAlpha(150),
-                          Color.fromRGBO(10, 4, 60, 100).withAlpha(300),
-                        ],
-                      )),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushNamed('Profile_Page');
-                    },
-                    child: Hero(
-                      tag: 'Profile',
-                      child: Image.network(
-                        'https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man5-512.png',
-                        fit: BoxFit.contain,
+                Center(
+                  child: Container(
+                    height: 250,
+                    width: 375,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: RadialGradient(
+                          stops: [0.2, 0.4, 0.6],
+                          center: Alignment.center,
+                          radius: 0.5,
+                          focalRadius: 0.5,
+                          colors: [
+                            Color.fromRGBO(10, 4, 60, 100),
+                            Color.fromRGBO(10, 4, 60, 100).withAlpha(150),
+                            Color.fromRGBO(10, 4, 60, 100).withAlpha(300),
+                          ],
+                        )),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('Profile_Page');
+                      },
+                      child: Hero(
+                        tag: 'Profile',
+                        child: Image.network(
+                          'https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man5-512.png',
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SwipeOptions(),
-              Flexible(
-                child: ListView.builder(
+                SwipeOptions(),
+                ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     itemCount: Coinlist.length,
                     itemBuilder: (context, index) {
@@ -122,8 +125,8 @@ class _MyhomescreenState extends State<Myhomescreen> {
                         // Low24: Coinlist[index].low24,
                       );
                     }),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

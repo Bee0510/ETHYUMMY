@@ -39,14 +39,6 @@ class Authentication {
       UserCredential Result = await _auth.signInWithEmailAndPassword(
           email: Email, password: Password);
       User? users = Result.user;
-      await DatabaseService(uid: users!.uid).UpdateUserData(
-        100,
-        'Etherium',
-        100,
-        '100',
-        100,
-        100,
-      );
 
       return _FromFirebaseUser(users);
     } catch (e) {

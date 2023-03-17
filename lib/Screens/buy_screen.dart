@@ -1,4 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, camel_case_types, prefer_const_constructors, avoid_unnecessary_containers, use_key_in_widget_constructors, unused_field, unused_import, non_constant_identifier_names, must_be_immutable, sort_child_properties_last, avoid_print, unused_local_variable
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ethyummy/Auth%20Models/auth_class.dart';
 import 'package:ethyummy/Firebase/firestore.dart';
@@ -7,6 +9,7 @@ import 'package:ethyummy/Models/coins.dart';
 import 'package:ethyummy/Widgets/loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
 import '../Small Compnents/texfield_formfill.dart';
 
@@ -167,6 +170,17 @@ class _Buy_ScreenState extends State<Buy_Screen> {
                           onPressed: () async {
                             if (_formkey.currentState!.validate()) {
                               setState(() async {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                        elevation: 4,
+                                        backgroundColor:
+                                            Color.fromRGBO(50, 50, 50, 100),
+                                        duration: Duration(seconds: 3),
+                                        content: Text(
+                                          'Payment successful',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
+                                        )));
                                 await DatabaseService(uid: userdata.uid)
                                     .UpdateUserData(
                                   double.parse(enteredprice),
@@ -176,6 +190,9 @@ class _Buy_ScreenState extends State<Buy_Screen> {
                                   double.parse(marketprice),
                                   100,
                                 );
+                                Timer(Duration(seconds: 1), () {
+                                  Navigator.of(context).pop('Myhomescreen');
+                                });
                               });
                             }
                           },

@@ -69,41 +69,48 @@ class CryptoCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(name,
-                                style: TextStyle(
-                                    overflow: TextOverflow.clip,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12)),
-                            Text(symbol, style: TextStyle(color: Colors.white))
-                          ],
+                        Container(
+                          width: 90,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(name,
+                                  style: TextStyle(
+                                      overflow: TextOverflow.fade,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12)),
+                              Text(symbol,
+                                  style: TextStyle(color: Colors.white))
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('₹' + currentprice.toDouble().toStringAsFixed(2),
-                          style: TextStyle(
-                              overflow: TextOverflow.clip,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16)),
-                      Text(
-                          Percentagechange24.toDouble() < 0
-                              ? '${Percentagechange24.toStringAsFixed(2)}%'
-                              : '+${Percentagechange24.toStringAsFixed(2)}%',
-                          style: TextStyle(
-                              color: Percentagechange24.toDouble() < 0
-                                  ? Colors.red
-                                  : Colors.green)),
-                    ],
+                  Container(
+                    width: 90,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        Text('₹' + currentprice.toDouble().toStringAsFixed(2),
+                            style: TextStyle(
+                                overflow: TextOverflow.clip,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16)),
+                        Text(
+                            Percentagechange24.toDouble() < 0
+                                ? '${Percentagechange24.toStringAsFixed(2)}%'
+                                : '+${Percentagechange24.toStringAsFixed(2)}%',
+                            style: TextStyle(
+                                color: Percentagechange24.toDouble() < 0
+                                    ? Colors.red
+                                    : Colors.green)),
+                      ],
+                    ),
                   )
                 ],
               ),

@@ -26,32 +26,34 @@ class _MyCoinDetailedScreenState extends State<MyCoinDetailedScreen> {
         backgroundColor: Color(0xff191d2d),
         title: Text('${Cointitle} Price'),
       ),
-      body: Column(
-        children: <Widget>[
-          SizedBox(height: 80),
-          Text(
-            Cointitle,
-            style: TextStyle(color: Colors.white, fontSize: 28),
-          ),
-          SizedBox(height: 10),
-          CircleAvatar(
-            backgroundColor: Color(0xff191d2d),
-            radius: 36,
-            backgroundImage: NetworkImage(Coinimage),
-          ),
-          SizedBox(height: 10),
-          Text(
-            '(${Coinsymbol})',
-            style: TextStyle(fontSize: 24, color: Colors.grey),
-          ),
-          SizedBox(
-            height: 470,
-            child: GraphSheet(
-                // High: Coinhigh24,
-                // Low: Coinlow24,
-                ),
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SizedBox(height: 80),
+            Text(
+              Cointitle,
+              style: TextStyle(color: Colors.white, fontSize: 28),
+            ),
+            SizedBox(height: 10),
+            CircleAvatar(
+              backgroundColor: Color(0xff191d2d),
+              radius: 36,
+              backgroundImage: NetworkImage(Coinimage),
+            ),
+            SizedBox(height: 10),
+            Text(
+              '(${Coinsymbol})',
+              style: TextStyle(fontSize: 24, color: Colors.grey),
+            ),
+            SizedBox(
+              height: 470,
+              child: GraphSheet(
+                  // High: Coinhigh24,
+                  // Low: Coinlow24,
+                  ),
+            ),
+          ],
+        ),
       ),
     );
   }

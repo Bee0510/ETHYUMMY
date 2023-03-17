@@ -37,7 +37,7 @@ class SwipeOptions extends StatelessWidget {
             itemCount: icon.length,
             itemBuilder: (context, i) {
               return Padding(
-                padding: const EdgeInsets.only(right: 30),
+                padding: const EdgeInsets.only(right: 30, left: 30),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -45,16 +45,24 @@ class SwipeOptions extends StatelessWidget {
                       height: 60,
                       width: 60,
                       decoration: BoxDecoration(
-                          color: Colors.white,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [Colors.purple, Colors.blue],
+                          ),
+                          // color: Colors.white,
                           borderRadius: BorderRadius.circular(15)),
                       child: InkWell(
                         child: IconButton(
                           icon: icon[i],
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('Coming_Soon');
+                          },
                         ),
                       ),
                     ),
-                    Text(title[i], style: TextStyle(color: Colors.white))
+                    Text(title[i],
+                        style: TextStyle(color: Colors.white, fontSize: 12))
                   ],
                 ),
               );

@@ -29,20 +29,35 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 40),
-            Center(
-              child: Lottie.network(
-                  'https://assets9.lottiefiles.com/packages/lf20_yc9ywdm7.json',
-                  animate: true),
-            ),
-            // Container(
-            //   child: AnimatedSplash(),
-            // )
-          ],
+      backgroundColor: Color.fromRGBO(10, 4, 60, 100),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 70),
+              Center(
+                child: Lottie.network(
+                    'https://assets9.lottiefiles.com/packages/lf20_yc9ywdm7.json',
+                    animate: true),
+              ),
+              // Container(
+              //   child: AnimatedSplash(),
+              // )
+              AnimatedTextKit(
+                animatedTexts: [
+                  TyperAnimatedText('ETHYUMMY',
+                      textStyle: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                        letterSpacing: 2,
+                      ),
+                      curve: Curves.linear,
+                      speed: Duration(milliseconds: 200))
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
